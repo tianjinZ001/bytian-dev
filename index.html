@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- Ambient background elements -->
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
   <div class="grid-bg"></div>
@@ -23,13 +22,15 @@
     <div class="container nav-inner">
       <div class="nav-logo">BYTIAN<span>.</span>DEV</div>
       <ul class="nav-links">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#blog">BLOG</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#about"    data-zh="关于我"   data-en="ABOUT">关于我</a></li>
+        <li><a href="#projects" data-zh="作品集"   data-en="PROJECTS">作品集</a></li>
+        <li><a href="#blog"     data-zh="博客"     data-en="BLOG">博客</a></li>
+        <li><a href="#contact"  data-zh="联系我"   data-en="CONTACT">联系我</a></li>
       </ul>
-      <button class="nav-menu-btn" id="menuBtn" aria-label="menu">
-        <span></span><span></span><span></span>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-zh">中</span>
+        <span class="lang-sep">/</span>
+        <span class="lang-en">EN</span>
       </button>
     </div>
   </nav>
@@ -38,43 +39,60 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-tag">// HUMAN-COMPUTER INTERACTION · BUILDER</div>
+        <div class="hero-tag"
+          data-zh="// 人机交互 · 创造者"
+          data-en="// HUMAN-COMPUTER INTERACTION · BUILDER">
+          // 人机交互 · 创造者
+        </div>
         <h1 class="hero-name">
-          Hi, I'm<br>
+          <span data-zh="你好，我是" data-en="Hi, I'm">你好，我是</span><br>
           <span class="outline">Tian.</span>
         </h1>
-        <div class="hero-role">// 探索技术与人之间的边界</div>
+        <div class="hero-role"
+          data-zh="// 探索技术与人之间的边界"
+          data-en="// Exploring the boundary between humans and technology">
+          // 探索技术与人之间的边界
+        </div>
         <p class="hero-bio">
-          我关注 <em>人机交互</em> 领域，相信科技可以无限延伸，<br>
-          但 <em>落地服务人类</em> 永远是终极目的。<br>
-          用 AI + vibe coding 把想法变成现实的产品。
+          <span data-zh="我关注 <em>人机交互</em> 领域，相信科技可以无限延伸，<br>但 <em>落地服务人类</em> 永远是终极目的。<br>用 AI + vibe coding 把想法变成现实的产品。"
+                data-en="I focus on <em>Human-Computer Interaction</em>, believing technology<br>can expand infinitely — but <em>serving people</em> is always the end goal.<br>I build real products from ideas using AI + vibe coding.">
+            我关注 <em>人机交互</em> 领域，相信科技可以无限延伸，<br>但 <em>落地服务人类</em> 永远是终极目的。<br>用 AI + vibe coding 把想法变成现实的产品。
+          </span>
         </p>
         <div class="cta-row">
-          <a href="#projects" class="btn btn-primary">查看作品集 →</a>
-          <a href="#contact" class="btn btn-outline">联系我</a>
+          <a href="#projects" class="btn btn-primary" data-zh="查看作品集 →" data-en="View Projects →">查看作品集 →</a>
+          <a href="#contact"  class="btn btn-outline"  data-zh="联系我"       data-en="Contact Me">联系我</a>
         </div>
         <div class="scroll-hint">
           <div class="scroll-line"></div>
-          SCROLL TO EXPLORE
+          <span data-zh="向下探索" data-en="SCROLL TO EXPLORE">向下探索</span>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="sec-label">// 01. ABOUT ME</div>
-      <h2 class="sec-title">关于我</h2>
+      <div class="sec-label" data-zh="// 01. 关于我" data-en="// 01. ABOUT ME">// 01. 关于我</div>
+      <h2 class="sec-title" data-zh="关于我" data-en="About Me">关于我</h2>
       <div class="about-grid">
         <div class="about-left">
-          <p class="about-text">
+          <p class="about-text"
+            data-zh="我是 <strong>Tian</strong>，专注于 <strong>人机交互</strong> 领域的研究与实践。我始终相信，技术的边界可以无限扩展——但真正有价值的，是那些能 <strong>落地、服务于人</strong> 的产品与体验。"
+            data-en="I'm <strong>Tian</strong>, focused on <strong>Human-Computer Interaction</strong> research and practice. I believe technology's boundaries can expand infinitely — but what truly matters are products that <strong>land and serve people</strong>.">
             我是 <strong>Tian</strong>，专注于 <strong>人机交互</strong> 领域的研究与实践。我始终相信，技术的边界可以无限扩展——但真正有价值的，是那些能 <strong>落地、服务于人</strong> 的产品与体验。
           </p>
-          <p class="about-text">
+          <p class="about-text"
+            data-zh="我用 AI 工具进行 <strong>vibe coding</strong>，快速将想法原型化。不依赖传统工程路径，而是用创造力驱动构建。"
+            data-en="I use AI tools for <strong>vibe coding</strong>, rapidly prototyping ideas. Rather than relying on traditional engineering paths, I let creativity drive the build.">
             我用 AI 工具进行 <strong>vibe coding</strong>，快速将想法原型化。不依赖传统工程路径，而是用创造力驱动构建。
           </p>
-          <p class="about-text">
+          <p class="about-text"
+            data-zh="这里是我的数字花园，记录探索的过程，展示每一个从零到一的项目。"
+            data-en="This is my digital garden — documenting the process of exploration and showcasing every project built from zero to one.">
             这里是我的数字花园，记录探索的过程，展示每一个从零到一的项目。
           </p>
           <div class="skills">
@@ -89,15 +107,15 @@
         <div class="stat-col">
           <div class="stat-card" style="--accent:#00f5ff">
             <div class="stat-num" style="color:#00f5ff">HCI</div>
-            <div class="stat-lab">// 人机交互 · 核心方向</div>
+            <div class="stat-lab" data-zh="// 人机交互 · 核心方向" data-en="// Human-Computer Interaction">// 人机交互 · 核心方向</div>
           </div>
           <div class="stat-card" style="--accent:#ff2d78">
             <div class="stat-num" style="color:#ff2d78">0→1</div>
-            <div class="stat-lab">// 从想法到产品</div>
+            <div class="stat-lab" data-zh="// 从想法到产品" data-en="// From idea to product">// 从想法到产品</div>
           </div>
           <div class="stat-card" style="--accent:#bf5fff">
             <div class="stat-num" style="color:#bf5fff">AI×</div>
-            <div class="stat-lab">// AI 放大创造力</div>
+            <div class="stat-lab" data-zh="// AI 放大创造力" data-en="// AI amplifies creativity">// AI 放大创造力</div>
           </div>
         </div>
       </div>
@@ -109,17 +127,21 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <div class="sec-label">// 02. PROJECTS</div>
-      <h2 class="sec-title">作品集</h2>
+      <div class="sec-label" data-zh="// 02. 作品集" data-en="// 02. PROJECTS">// 02. 作品集</div>
+      <h2 class="sec-title" data-zh="作品集" data-en="Projects">作品集</h2>
       <div class="proj-grid">
 
         <div class="pcard pcard-featured">
           <div class="pcard-body">
-            <div class="pcard-num">// PROJECT_001 · COMING SOON</div>
-            <div class="pcard-name">第一个项目即将诞生</div>
-            <p class="pcard-desc">这里将展示你的第一个 vibe coding 作品。有了想法随时更新这里。</p>
+            <div class="pcard-num" data-zh="// 项目_001 · 即将发布" data-en="// PROJECT_001 · COMING SOON">// 项目_001 · 即将发布</div>
+            <div class="pcard-name" data-zh="第一个项目即将诞生" data-en="First project coming soon">第一个项目即将诞生</div>
+            <p class="pcard-desc"
+              data-zh="这里将展示你的第一个 vibe coding 作品。有了想法随时更新这里。"
+              data-en="This space will showcase the first vibe coding creation. Stay tuned.">
+              这里将展示你的第一个 vibe coding 作品。有了想法随时更新这里。
+            </p>
             <div class="tags">
-              <span class="tag tag-cyan">AI 工具</span>
+              <span class="tag tag-cyan">AI</span>
               <span class="tag tag-pink">HCI</span>
               <span class="tag tag-purple">Vibe Coding</span>
             </div>
@@ -140,13 +162,13 @@
         <div class="pcard pcard-soon">
           <div class="soon-label">// SLOT_002</div>
           <div class="soon-plus">+</div>
-          <div class="soon-text">项目建设中</div>
+          <div class="soon-text" data-zh="项目建设中" data-en="In progress">项目建设中</div>
         </div>
 
         <div class="pcard pcard-soon">
           <div class="soon-label">// SLOT_003</div>
           <div class="soon-plus">+</div>
-          <div class="soon-text">项目建设中</div>
+          <div class="soon-text" data-zh="项目建设中" data-en="In progress">项目建设中</div>
         </div>
 
       </div>
@@ -158,20 +180,32 @@
   <!-- BLOG -->
   <section id="blog">
     <div class="container">
-      <div class="sec-label">// 03. BLOG</div>
-      <h2 class="sec-title">博客</h2>
+      <div class="sec-label" data-zh="// 03. 博客" data-en="// 03. BLOG">// 03. 博客</div>
+      <h2 class="sec-title" data-zh="博客" data-en="Blog">博客</h2>
       <div class="blog-list">
         <div class="bitem">
-          <span class="btitle">科技无限延伸，但落地服务人类才是终点</span>
-          <span class="bmeta">即将发布</span>
+          <span class="btitle"
+            data-zh="科技无限延伸，但落地服务人类才是终点"
+            data-en="Technology can expand infinitely — but serving people is the destination">
+            科技无限延伸，但落地服务人类才是终点
+          </span>
+          <span class="bmeta" data-zh="即将发布" data-en="Coming soon">即将发布</span>
         </div>
         <div class="bitem">
-          <span class="btitle">Vibe Coding 是什么：一个非程序员的造物日记</span>
-          <span class="bmeta">即将发布</span>
+          <span class="btitle"
+            data-zh="Vibe Coding 是什么：一个非程序员的造物日记"
+            data-en="What is Vibe Coding: A non-programmer's creation diary">
+            Vibe Coding 是什么：一个非程序员的造物日记
+          </span>
+          <span class="bmeta" data-zh="即将发布" data-en="Coming soon">即将发布</span>
         </div>
         <div class="bitem">
-          <span class="btitle">HCI 视角下的 AI 产品设计思考</span>
-          <span class="bmeta">即将发布</span>
+          <span class="btitle"
+            data-zh="HCI 视角下的 AI 产品设计思考"
+            data-en="Thoughts on AI product design from an HCI perspective">
+            HCI 视角下的 AI 产品设计思考
+          </span>
+          <span class="bmeta" data-zh="即将发布" data-en="Coming soon">即将发布</span>
         </div>
       </div>
     </div>
@@ -182,19 +216,24 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="sec-label">// 04. CONTACT</div>
-      <h2 class="sec-title">联系我</h2>
+      <div class="sec-label" data-zh="// 04. 联系我" data-en="// 04. CONTACT">// 04. 联系我</div>
+      <h2 class="sec-title" data-zh="联系我" data-en="Contact">联系我</h2>
       <div class="cbox">
         <div class="cbox-glow"></div>
-        <div class="cbox-title">一起 build 点有意义的东西</div>
-        <p class="cbox-sub">
-          对人机交互感兴趣？有产品想法想聊？<br>
-          或者只是想认识一个在用 AI 造东西的人？
+        <div class="cbox-title"
+          data-zh="一起 build 点有意义的东西"
+          data-en="Let's build something meaningful together">
+          一起 build 点有意义的东西
+        </div>
+        <p class="cbox-sub"
+          data-zh="对人机交互感兴趣？有产品想法想聊？<br>或者只是想认识一个在用 AI 造东西的人？"
+          data-en="Interested in HCI? Have a product idea to discuss?<br>Or just want to connect with someone building things with AI?">
+          对人机交互感兴趣？有产品想法想聊？<br>或者只是想认识一个在用 AI 造东西的人？
         </p>
         <div class="clinks">
-          <a href="mailto:your@email.com" class="cbtn cbtn-email">EMAIL</a>
+          <a href="mailto:your@email.com" class="cbtn cbtn-email" data-zh="邮件" data-en="EMAIL">邮件</a>
           <a href="https://github.com/tianjinZ001" target="_blank" class="cbtn cbtn-github">GITHUB</a>
-          <a href="#" class="cbtn cbtn-twitter">TWITTER / X</a>
+          <a href="#" class="cbtn cbtn-twitter" data-zh="推特 / X" data-en="TWITTER / X">推特 / X</a>
         </div>
       </div>
     </div>
@@ -202,7 +241,13 @@
 
   <footer>
     <div class="container">
-      <p>© 2025 TIAN · HCI BUILDER · VIBE CODING · POWERED BY <span>♥</span> & AI</p>
+      <p>
+        <span data-zh="© 2025 TIAN · 人机交互 · VIBE CODING · 由" data-en="© 2025 TIAN · HCI BUILDER · VIBE CODING · POWERED BY">
+          © 2025 TIAN · 人机交互 · VIBE CODING · 由
+        </span>
+        <span>♥</span>
+        <span data-zh=" & AI 驱动" data-en=" & AI"> & AI 驱动</span>
+      </p>
     </div>
   </footer>
 

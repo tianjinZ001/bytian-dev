@@ -1,4 +1,37 @@
-/* ===== BYTIAN.DEV — MAIN JAVASCRIPT ===== */
+/* ===== BYTIAN.DEV — MAIN JS (bilingual) ===== */
+
+/* === Language system === */
+const STORAGE_KEY = 'bytian-lang';
+let currentLang = localStorage.getItem(STORAGE_KEY) || 'zh';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.body.setAttribute('data-lang', lang);
+  localStorage.setItem(STORAGE_KEY, lang);
+
+  // Update all elements with data-zh / data-en
+  document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+    const content = el.getAttribute('data-' + lang);
+    if (content !== null) el.innerHTML = content;
+  });
+
+  // Update page title
+  document.title = lang === 'zh'
+    ? 'Tian — HCI 创造者'
+    : 'Tian — HCI Builder';
+}
+
+document.getElementById('langToggle').addEventListener('click', () => {
+  const next = currentLang === 'zh' ? 'en' : 'zh';
+  // Brief flash effect
+  document.body.classList.add('lang-switching');
+  setTimeout(() => document.body.classList.remove('lang-switching'), 300);
+  applyLang(next);
+});
+
+// Apply on load
+applyLang(currentLang);
 
 /* === Custom cursor glow === */
 const glow = document.getElementById('glow');
@@ -19,27 +52,23 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 /* === Active nav highlight on scroll === */
-const sections  = ['about', 'projects', 'blog', 'contact'];
+const sections = ['about', 'projects', 'blog', 'contact'];
 const navLinks  = document.querySelectorAll('.nav-links a');
 
-const onScroll = () => {
+window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(id => {
     const el = document.getElementById(id);
     if (el && window.scrollY >= el.offsetTop - 140) current = id;
   });
   navLinks.forEach(a => {
-    const href = a.getAttribute('href');
-    a.classList.toggle('active', href === '#' + current);
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
-};
-window.addEventListener('scroll', onScroll, { passive: true });
+}, { passive: true });
 
 /* === Fade-in on scroll === */
-const fadeEls = document.querySelectorAll(
-  'section, .pcard, .bitem, .stat-card, .cbox'
-);
-fadeEls.forEach(el => el.classList.add('fade-in'));
+document.querySelectorAll('section, .pcard, .bitem, .stat-card, .cbox')
+  .forEach(el => el.classList.add('fade-in'));
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -48,11 +77,11 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-fadeEls.forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* === Project card 3D tilt on hover === */
+/* === Project card 3D tilt === */
 document.querySelectorAll('.pcard').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
@@ -66,39 +95,17 @@ document.querySelectorAll('.pcard').forEach(card => {
   });
 });
 
-/* === Typewriter effect on hero tag === */
+/* === Typewriter on hero tag === */
 const heroTag = document.querySelector('.hero-tag');
 if (heroTag) {
-  const text = heroTag.textContent;
+  const text = heroTag.textContent.trim();
   heroTag.textContent = '';
   let i = 0;
   const type = () => {
     if (i < text.length) {
       heroTag.textContent += text[i++];
-      setTimeout(type, 28);
+      setTimeout(type, 30);
     }
   };
-  setTimeout(type, 400);
-}
-
-/* === Mobile menu toggle (placeholder) === */
-const menuBtn = document.getElementById('menuBtn');
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    // simple toggle — can extend with a slide-out drawer later
-    const links = document.querySelector('.nav-links');
-    if (links) {
-      const open = links.style.display === 'flex';
-      links.style.display = open ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '60px';
-      links.style.right = '28px';
-      links.style.background = '#0d1220';
-      links.style.border = '1px solid rgba(0,245,255,0.15)';
-      links.style.padding = '16px 24px';
-      links.style.gap = '16px';
-      links.style.zIndex = '200';
-    }
-  });
+  setTimeout(type, 500);
 }

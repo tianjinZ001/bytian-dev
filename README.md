@@ -1,32 +1,25 @@
-# bytian.dev — 个人作品集网站
-
-Tian 的个人作品集网站，暗黑霓虹风格，专注 HCI + Vibe Coding。
+# bytian.dev v2 — 中英双语版本
 
 ## 文件结构
-
 ```
 bytian-dev/
-├── index.html   ← 网站主页（所有内容）
-├── style.css    ← 样式文件
-├── main.js      ← 交互动效
-└── README.md    ← 说明文档
+├── index.html   ← 主页（含中英双语所有内容）
+├── style.css    ← 样式
+├── main.js      ← 交互 + 语言切换逻辑
+└── README.md
 ```
 
-## 本地预览
+## 语言切换说明
+- 右上角按钮手动切换中文 / English
+- 语言偏好自动保存到浏览器，下次访问记住选择
+- 所有文字通过 `data-zh` / `data-en` 属性管理，日后新增内容只需在 HTML 里加这两个属性即可
 
-双击 `index.html` 直接在浏览器打开即可预览。
+## 更新内容方法
+在 HTML 中找到对应元素，修改 `data-zh` 和 `data-en` 的值：
+```html
+<span data-zh="中文内容" data-en="English content">中文内容</span>
+```
 
-## 部署到 Vercel（上线步骤）
-
-1. 把这个文件夹上传到 GitHub（仓库名建议：`bytian-dev`）
-2. 登录 [vercel.com](https://vercel.com)，用 GitHub 账号登录
-3. 点击 "New Project" → 选择你的仓库 → 点击 Deploy
-4. 几秒后自动上线，得到一个 `.vercel.app` 临时域名
-5. 在 Vercel 设置里绑定 `bytian.dev` 域名
-
-## 日后更新内容
-
-- **添加项目**：修改 `index.html` 中 `id="projects"` 部分
-- **添加博客**：修改 `index.html` 中 `id="blog"` 部分
-- **修改联系方式**：修改 `id="contact"` 部分的邮箱和链接
-- **改颜色**：修改 `style.css` 顶部 `:root` 里的 CSS 变量
+## 部署更新到 Netlify
+1. 在 GitHub 仓库页面，直接点文件编辑或上传新文件
+2. Netlify 检测到 GitHub 变化后自动重新部署（约 30 秒）
