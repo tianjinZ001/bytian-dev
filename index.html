@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tian — HCI Builder</title>
+  <meta name="description" content="Tian 的个人作品集。关注人机交互，用 AI 把想法变成产品。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background elements -->
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="grid-bg"></div>
+  <div class="cursor-glow" id="glow"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <div class="nav-logo">BYTIAN<span>.</span>DEV</div>
+      <ul class="nav-links">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#blog">BLOG</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">// HUMAN-COMPUTER INTERACTION · BUILDER</div>
+        <h1 class="hero-name">
+          Hi, I'm<br>
+          <span class="outline">Tian.</span>
+        </h1>
+        <div class="hero-role">// 探索技术与人之间的边界</div>
+        <p class="hero-bio">
+          我关注 <em>人机交互</em> 领域，相信科技可以无限延伸，<br>
+          但 <em>落地服务人类</em> 永远是终极目的。<br>
+          用 AI + vibe coding 把想法变成现实的产品。
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">查看作品集 →</a>
+          <a href="#contact" class="btn btn-outline">联系我</a>
+        </div>
+        <div class="scroll-hint">
+          <div class="scroll-line"></div>
+          SCROLL TO EXPLORE
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-label">// 01. ABOUT ME</div>
+      <h2 class="sec-title">关于我</h2>
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="about-text">
+            我是 <strong>Tian</strong>，专注于 <strong>人机交互</strong> 领域的研究与实践。我始终相信，技术的边界可以无限扩展——但真正有价值的，是那些能 <strong>落地、服务于人</strong> 的产品与体验。
+          </p>
+          <p class="about-text">
+            我用 AI 工具进行 <strong>vibe coding</strong>，快速将想法原型化。不依赖传统工程路径，而是用创造力驱动构建。
+          </p>
+          <p class="about-text">
+            这里是我的数字花园，记录探索的过程，展示每一个从零到一的项目。
+          </p>
+          <div class="skills">
+            <span class="skill">HCI</span>
+            <span class="skill">VIBE CODING</span>
+            <span class="skill">AI TOOLS</span>
+            <span class="skill">PRODUCT THINKING</span>
+            <span class="skill">CLAUDE</span>
+            <span class="skill">CURSOR</span>
+          </div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-card" style="--accent:#00f5ff">
+            <div class="stat-num" style="color:#00f5ff">HCI</div>
+            <div class="stat-lab">// 人机交互 · 核心方向</div>
+          </div>
+          <div class="stat-card" style="--accent:#ff2d78">
+            <div class="stat-num" style="color:#ff2d78">0→1</div>
+            <div class="stat-lab">// 从想法到产品</div>
+          </div>
+          <div class="stat-card" style="--accent:#bf5fff">
+            <div class="stat-num" style="color:#bf5fff">AI×</div>
+            <div class="stat-lab">// AI 放大创造力</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="sec-label">// 02. PROJECTS</div>
+      <h2 class="sec-title">作品集</h2>
+      <div class="proj-grid">
+
+        <div class="pcard pcard-featured">
+          <div class="pcard-body">
+            <div class="pcard-num">// PROJECT_001 · COMING SOON</div>
+            <div class="pcard-name">第一个项目即将诞生</div>
+            <p class="pcard-desc">这里将展示你的第一个 vibe coding 作品。有了想法随时更新这里。</p>
+            <div class="tags">
+              <span class="tag tag-cyan">AI 工具</span>
+              <span class="tag tag-pink">HCI</span>
+              <span class="tag tag-purple">Vibe Coding</span>
+            </div>
+          </div>
+          <div class="pcard-visual">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="28" r="24" stroke="rgba(0,245,255,0.3)" stroke-width="1"/>
+              <circle cx="28" cy="28" r="14" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+              <circle cx="28" cy="28" r="5" fill="rgba(0,245,255,0.7)"/>
+              <line x1="28" y1="4"  x2="28" y2="14" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+              <line x1="52" y1="28" x2="42" y2="28" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+              <line x1="28" y1="52" x2="28" y2="42" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+              <line x1="4"  y1="28" x2="14" y2="28" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pcard pcard-soon">
+          <div class="soon-label">// SLOT_002</div>
+          <div class="soon-plus">+</div>
+          <div class="soon-text">项目建设中</div>
+        </div>
+
+        <div class="pcard pcard-soon">
+          <div class="soon-label">// SLOT_003</div>
+          <div class="soon-plus">+</div>
+          <div class="soon-text">项目建设中</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="container">
+      <div class="sec-label">// 03. BLOG</div>
+      <h2 class="sec-title">博客</h2>
+      <div class="blog-list">
+        <div class="bitem">
+          <span class="btitle">科技无限延伸，但落地服务人类才是终点</span>
+          <span class="bmeta">即将发布</span>
+        </div>
+        <div class="bitem">
+          <span class="btitle">Vibe Coding 是什么：一个非程序员的造物日记</span>
+          <span class="bmeta">即将发布</span>
+        </div>
+        <div class="bitem">
+          <span class="btitle">HCI 视角下的 AI 产品设计思考</span>
+          <span class="bmeta">即将发布</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="sec-label">// 04. CONTACT</div>
+      <h2 class="sec-title">联系我</h2>
+      <div class="cbox">
+        <div class="cbox-glow"></div>
+        <div class="cbox-title">一起 build 点有意义的东西</div>
+        <p class="cbox-sub">
+          对人机交互感兴趣？有产品想法想聊？<br>
+          或者只是想认识一个在用 AI 造东西的人？
+        </p>
+        <div class="clinks">
+          <a href="mailto:your@email.com" class="cbtn cbtn-email">EMAIL</a>
+          <a href="https://github.com/tianjinZ001" target="_blank" class="cbtn cbtn-github">GITHUB</a>
+          <a href="#" class="cbtn cbtn-twitter">TWITTER / X</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 TIAN · HCI BUILDER · VIBE CODING · POWERED BY <span>♥</span> & AI</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
