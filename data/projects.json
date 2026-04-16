@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ai-efficiency-cycle",
+    "titleZh": "产品经理效率闭环图谱",
+    "titleEn": "PM Efficiency Cycle",
+    "descZh": "用 7 个工作环节展示 AI 如何把多天工作压缩到小时级，支持可编辑内容和 PPT 导出。",
+    "descEn": "A 7-step workflow showing how AI compresses multi-day work into hours, with editable content and PPT export.",
+    "longDescZh": "这个项目围绕产品经理高频工作流构建，通过可编辑的可视化结构呈现 AI 如何在每个环节提升效率。核心目标是把复杂协作过程变成可沟通、可演示、可复用的资产。",
+    "longDescEn": "This project maps high-frequency PM workflows and visualizes how AI improves each stage. The goal is to turn complex collaboration into reusable assets that are easy to communicate and present.",
+    "status": "live",
+    "tracks": ["ai", "product"],
+    "year": "2026",
+    "roleZh": "产品设计 / 前端实现",
+    "roleEn": "Product Design / Frontend",
+    "stack": ["HTML", "CSS", "JavaScript", "PptxGenJS"],
+    "tags": [
+      { "zh": "AI 工具", "en": "AI Tools", "accent": true },
+      { "zh": "产品设计", "en": "Product Design" },
+      { "zh": "可视化", "en": "Visualization" }
+    ],
+    "link": "../framework.html",
+    "detailLink": "project.html?id=ai-efficiency-cycle"
+  },
+  {
+    "id": "hci-lab-notes",
+    "titleZh": "HCI 研究观察手册",
+    "titleEn": "HCI Observation Notes",
+    "descZh": "沉淀你在用户访谈、可用性测试与交互设计中的实践记录，形成长期研究资产。",
+    "descEn": "A long-term knowledge base for user interviews, usability testing, and interaction design practices.",
+    "longDescZh": "项目聚焦于把碎片化研究笔记结构化，支持问题归档、证据回溯与设计结论复用，帮助研究过程形成闭环。",
+    "longDescEn": "This project structures fragmented research notes into a reusable system for question tracking, evidence tracing, and design decision reuse.",
+    "status": "building",
+    "tracks": ["hci", "research"],
+    "year": "2026",
+    "roleZh": "研究框架设计",
+    "roleEn": "Research Framework Design",
+    "stack": ["Notion API", "JavaScript", "UX Research"],
+    "tags": [
+      { "zh": "HCI", "en": "HCI", "accent": true },
+      { "zh": "研究", "en": "Research" }
+    ],
+    "link": "#",
+    "detailLink": "project.html?id=hci-lab-notes"
+  },
+  {
+    "id": "vibe-prototype-kit",
+    "titleZh": "Vibe Coding 原型工具箱",
+    "titleEn": "Vibe Coding Prototype Kit",
+    "descZh": "把产品想法快速拆成页面、交互和测试清单，帮助非工程背景也能快速试错。",
+    "descEn": "Turn product ideas into pages, interactions, and test checklists for fast iteration, even without engineering background.",
+    "longDescZh": "项目目标是把“想法到可用原型”的门槛降低，通过模板和流程化脚手架让团队更快开始验证。",
+    "longDescEn": "The project lowers the barrier from idea to usable prototype with templates and process scaffolding for faster validation.",
+    "status": "soon",
+    "tracks": ["ai", "tooling"],
+    "year": "2026",
+    "roleZh": "产品策略 / 工具设计",
+    "roleEn": "Product Strategy / Tool Design",
+    "stack": ["Cursor", "Claude", "Rapid Prototyping"],
+    "tags": [
+      { "zh": "Vibe Coding", "en": "Vibe Coding", "accent": true },
+      { "zh": "原型", "en": "Prototyping" }
+    ],
+    "link": "#",
+    "detailLink": "project.html?id=vibe-prototype-kit"
+  }
+]

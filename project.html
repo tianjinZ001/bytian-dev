@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目详情 - Tian</title>
+  <meta name="description" content="Tian 的项目详情页，包含目标、角色、技术栈与进展。" />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="项目详情 - Tian" />
+  <meta property="og:description" content="查看项目背景、设计思路和技术实现。" />
+  <meta property="og:url" content="https://bytian.site/project.html" />
+  <meta property="og:image" content="https://bytian.site/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="项目详情 - Tian" />
+  <meta name="twitter:description" content="查看项目背景、设计思路和技术实现。" />
+  <meta name="twitter:image" content="https://bytian.site/og-cover.png" />
+  <link rel="canonical" href="https://bytian.site/project.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer data-domain="bytian.site" src="https://plausible.io/js/script.js"></script>
+</head>
+<body data-lang="zh">
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" style="text-decoration:none;">✦</a>
+      <ul class="nav-links">
+        <li><a href="index.html#projects" data-zh="返回作品集" data-en="Back to Projects">返回作品集</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle">
+          <span class="lang-zh">中</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-en">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="project-detail-main">
+    <section class="section" style="padding-top:64px;">
+      <div class="project-detail fade in" id="project-detail">
+        <div class="project-detail-head">
+          <div class="coming-badge" id="pd-status">加载中...</div>
+          <h1 class="project-detail-title" id="pd-title">项目加载中...</h1>
+          <p class="project-detail-desc" id="pd-desc">请稍候，正在读取项目详情。</p>
+          <div class="project-detail-tags" id="pd-tags"></div>
+        </div>
+
+        <div class="project-detail-grid">
+          <article class="pd-card">
+            <h3 data-zh="项目概览" data-en="Overview">项目概览</h3>
+            <p id="pd-long-desc">-</p>
+          </article>
+          <article class="pd-card">
+            <h3 data-zh="我的角色" data-en="My Role">我的角色</h3>
+            <p id="pd-role">-</p>
+          </article>
+          <article class="pd-card">
+            <h3 data-zh="技术栈" data-en="Stack">技术栈</h3>
+            <div class="project-detail-tags" id="pd-stack"></div>
+          </article>
+          <article class="pd-card">
+            <h3 data-zh="项目状态" data-en="Status">项目状态</h3>
+            <p id="pd-meta">-</p>
+          </article>
+        </div>
+
+        <div class="project-detail-actions">
+          <a id="pd-live-link" class="btn-fill" href="#" target="_blank" rel="noopener noreferrer" data-zh="在线体验" data-en="Live demo">在线体验</a>
+          <a href="index.html#projects" class="btn-ghost" data-zh="返回作品集" data-en="Back to projects">返回作品集</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tian · HCI Builder · bytian.site</p>
+  </footer>
+
+  <script src="project.js"></script>
+</body>
+</html>

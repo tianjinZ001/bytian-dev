@@ -1,0 +1,14 @@
+{
+  "name": "bytian-v5",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx netlify dev",
+    "functions:serve": "npx netlify functions:serve",
+    "publish:project": "node scripts/publish-project.mjs",
+    "seed:projects": "node scripts/seed-projects.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4"
+  }
+}
