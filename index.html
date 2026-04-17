@@ -40,11 +40,12 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
 
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <div class="nav-logo">✦</div>
+      <a href="#hero" class="nav-logo" aria-label="回到顶部">✦</a>
       <ul class="nav-links">
         <li><a href="#about"    data-zh="关于"   data-en="About">关于</a></li>
         <li><a href="#projects" data-zh="作品"   data-en="Projects">作品</a></li>
@@ -62,6 +63,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- HERO -->
   <section class="hero fade" id="hero">
     <p class="hero-eyebrow" id="greeting-line">欢迎来到我的空间</p>
@@ -183,9 +185,10 @@
         <p class="sec-sub" data-zh="留下你到访的痕迹 ✦" data-en="Leave a trace of your visit ✦">留下你到访的痕迹 ✦</p>
       </div>
       <div class="guestbook fade">
-        <div class="gb-messages" id="gb-messages"></div>
+        <div class="gb-messages" id="gb-messages" aria-live="polite"></div>
         <div class="gb-input-row">
-          <input class="gb-input" id="gb-input" placeholder="说点什么吧..." maxlength="100" />
+          <label class="sr-only" for="gb-input">留言内容</label>
+          <input class="gb-input" id="gb-input" name="guestbook-message" autocomplete="off" spellcheck="false" placeholder="说点什么吧…" maxlength="100" aria-label="留言内容" />
           <button class="gb-send" id="gb-send">发送</button>
         </div>
       </div>
@@ -204,6 +207,7 @@
       <a href="https://www.xiaohongshu.com/user/profile/389008200" target="_blank" class="cl-btn">◈ 小红书</a>
     </div>
   </section>
+  </main>
 
   <footer>
     <p>© 2025 Tian · HCI Builder · Vibe Coder · bytian.dev</p>

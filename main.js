@@ -98,6 +98,7 @@ const API_ENDPOINTS = {
   guestbookList: '/.netlify/functions/guestbook-list',
   guestbookCreate: '/.netlify/functions/guestbook-create'
 };
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function escapeHTML(str) {
   return String(str)
@@ -155,6 +156,27 @@ function renderProjectFilters() {
     const activeClass = track.key === activeTrack ? 'active' : '';
     return `<button class="project-filter ${activeClass}" data-track="${track.key}">${escapeHTML(label)}</button>`;
   }).join('');
+}
+
+function isValidTrack(track) {
+  return projectTracks.some(item => item.key === track);
+}
+
+function getTrackFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const track = params.get('track');
+  if (!track || !isValidTrack(track)) return 'all';
+  return track;
+}
+
+function syncTrackToURL(track) {
+  const url = new URL(window.location.href);
+  if (track === 'all') {
+    url.searchParams.delete('track');
+  } else {
+    url.searchParams.set('track', track);
+  }
+  window.history.replaceState({}, '', url);
 }
 
 function renderProjects() {
@@ -258,7 +280,7 @@ function applyLang(l) {
     const val = el.getAttribute('data-' + l);
     if (val !== null) el.innerHTML = val;
   });
-  document.getElementById('gb-input').placeholder = l === 'zh' ? '说点什么吧...' : 'Leave a message...';
+  document.getElementById('gb-input').placeholder = l === 'zh' ? '说点什么吧…' : 'Leave a message…';
   document.getElementById('gb-send').textContent   = l === 'zh' ? '发送' : 'Send';
   renderProjectFilters();
   renderProjects();
@@ -273,6 +295,7 @@ document.addEventListener('click', e => {
   const btn = e.target.closest('.project-filter');
   if (btn) {
     activeTrack = btn.getAttribute('data-track') || 'all';
+    syncTrackToURL(activeTrack);
     renderProjectFilters();
     renderProjects();
     trackEvent('project_filter', { track: activeTrack });
@@ -319,6 +342,7 @@ document.getElementById('greeting-line').setAttribute('data-en', g.heroEn);
 
 /* Apply saved language */
 async function initPage() {
+  activeTrack = getTrackFromURL();
   await loadContentData();
   await loadGuestbook();
   applyLang(lang);
@@ -434,18 +458,24 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+if (prefersReducedMotion) {
+  document.querySelectorAll('.fade').forEach(el => el.classList.add('in'));
+} else {
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+}
 
 /* === Magnetic buttons === */
-document.querySelectorAll('.magnetic').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const r  = btn.getBoundingClientRect();
-    const dx = e.clientX - (r.left + r.width  / 2);
-    const dy = e.clientY - (r.top  + r.height / 2);
-    btn.style.transform = `translate(${dx * 0.18}px, ${dy * 0.18}px)`;
+if (!prefersReducedMotion) {
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r  = btn.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width  / 2);
+      const dy = e.clientY - (r.top  + r.height / 2);
+      btn.style.transform = `translate(${dx * 0.18}px, ${dy * 0.18}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
   });
-  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-});
+}
 
 /* === Smooth scroll === */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -453,7 +483,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const href = a.getAttribute('href');
     if (!href || href === '#') return;
     const t = document.querySelector(href);
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    if (t) {
+      e.preventDefault();
+      t.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
   });
 });
 
